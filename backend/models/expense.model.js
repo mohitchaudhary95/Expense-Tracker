@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
 
-const userSchema=new model.Schema({
+const userSchema=new mongoose.Schema({
     description:{
         type:String,
         required:true
@@ -26,4 +26,4 @@ const userSchema=new model.Schema({
 
 const Expense=mongoose.model('Expense',userSchema);
 
-modeule.exports=Expense;
+module.exports=Expense;

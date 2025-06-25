@@ -4,6 +4,7 @@ const dotenv=require('dotenv');
 const cookieparser=require('cookie-parser');
 const Connectdb=require('./database/db.js')
 const userRoute=require('./routes/user.route.js');
+const expenseRoute=require('./routes/expense.route.js');
 
 
 dotenv.config({});
@@ -21,6 +22,7 @@ const corsOptions={
 app.use(cors(corsOptions));
 
 app.use("/api/v1/user",userRoute);
+app.use("/api/v1/expense",expenseRoute);
 
 app.listen(PORT,()=>{
     Connectdb();
