@@ -8,7 +8,7 @@ import { toast } from "sonner";
 import axios from "axios";
 
 const Navbar = () => {
-  const user = false; // Replace with actual auth logic
+  const user = true; // Replace with actual auth logic
   const navigate = useNavigate();
 
   const handleLogout = async () => {
