@@ -6,7 +6,6 @@ const Connectdb=require('./database/db.js')
 const userRoute=require('./routes/user.route.js');
 const expenseRoute=require('./routes/expense.route.js');
 
-
 dotenv.config({});
 
 const app=express();
