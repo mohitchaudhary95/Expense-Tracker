@@ -6,9 +6,12 @@ import { Link, useNavigate } from 'react-router-dom'
 import Logo from './shared/logo'
 import axios from 'axios'
 import { toast } from 'sonner'
+import { useDispatch } from 'react-redux'
+import { setAuthUser } from '@/redux/authSlice'
 
 const Login = () => {
   const [input, setInput] = useState({ email: '', password: '' })
+  const dispatch=useDispatch();
 
   const handleChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value })
@@ -26,6 +29,7 @@ const Login = () => {
     });
     console.log(res)
     if(res.data.success){
+        dispatch(setAuthUser(res.data.user))
         toast.success(res.data.message)
         navigate("/")
     }
@@ -40,7 +44,7 @@ const Login = () => {
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-white dark:from-gray-900 dark:to-black px-4">
       <form
         onSubmit={handleSubmit}
-        className="bg-white dark:bg-gray-900 dark:text-white animate-fade-in-down transition-all duration-700 p-8 rounded-2xl shadow-xl w-full max-w-md space-y-6"
+        className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-xl w-full max-w-md animate-fade-in-down transition-all duration-700"
       >
         <Logo />
 

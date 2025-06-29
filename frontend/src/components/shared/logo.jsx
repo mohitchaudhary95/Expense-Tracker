@@ -1,18 +1,17 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+// src/components/shared/Logo.jsx
+import { Link } from 'react-router-dom';
+import logo from '@/assets/expenselogo.png'; // use import for reliability
 
 const Logo = () => {
   return (
-    <div className="flex justify-center mb-6">
-      <Link to="/" className="inline-block">
-        <img
-          src="./src/assets/expenselogo.png"
-          alt="Logo"
-          className="h-12 w-auto object-contain"
-        />
-      </Link>
-    </div>
-  )
-}
+    <Link to="/" className="inline-block">
+      <img
+        src={logo}
+        alt="Expense Tracker Logo"
+        className="h-12 w-auto object-contain hover:scale-105 transition-transform duration-200"
+      />
+    </Link>
+  );
+};
 
-export default Logo
+export default Logo;

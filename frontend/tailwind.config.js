@@ -1,13 +1,22 @@
-export default {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: 'class',
+  content: [
+    './index.html',
+    './src/**/*.{js,jsx}',
+  ],
   theme: {
-    animations: {
-      'fade-in-down': {
-        from: { opacity: 0, transform: 'translateY(-20px)' },
-        to: { opacity: 1, transform: 'translateY(0)' },
+    extend: {
+      colors: {
+        primary: {
+          DEFAULT: '#22c55e', // Tailwind's green-500
+          dark: '#16a34a',
+        },
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
       },
     },
   },
   plugins: [],
 }
-

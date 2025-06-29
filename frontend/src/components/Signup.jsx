@@ -35,14 +35,14 @@ const Signup = () => {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-white px-4">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-white dark:from-gray-900 dark:to-black px-4">
       <form
         onSubmit={handleSubmit}
-        className="bg-white animate-fade-in-down transition-all duration-700 p-8 rounded-2xl shadow-xl w-full max-w-md space-y-6"
+        className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-xl w-full max-w-md animate-fade-in-down transition-all duration-700"
       >
         <Logo />
 
-        <h2 className="text-3xl font-bold text-center text-gray-900">Create an Account</h2>
+        <h2 className="text-3xl font-bold text-center text-white-900">Create an Account</h2>
 
         <div className="space-y-1">
           <Label className="text-sm font-semibold text-gray-700">Full Name</Label>
